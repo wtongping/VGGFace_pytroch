@@ -7,7 +7,7 @@ import torch.nn.functional as F
 
 if __name__ == "__main__":
     model = VGG_16()
-    model.load_state_dict(torch.load("./pretrained/vgg_face.pth"))
+    model.load_state_dict(torch.load("./pretrained/vgg_face_dag.pth"))
     model.eval()
     im = cv2.imread("./images/Aamir_Khan1.png")
     im = torch.Tensor(im).permute(2, 0, 1).view(1, 3, 224, 224)
